@@ -320,7 +320,7 @@ document.querySelectorAll("a,button,.project-card,.skill-category").forEach(el =
 
     el.addEventListener("mouseenter", () => {
 
-        if(cursorOutline){
+        if (cursorOutline) {
 
             cursorOutline.style.transform = "scale(1.6)";
             cursorOutline.style.borderColor = "#8b5cf6";
@@ -331,7 +331,7 @@ document.querySelectorAll("a,button,.project-card,.skill-category").forEach(el =
 
     el.addEventListener("mouseleave", () => {
 
-        if(cursorOutline){
+        if (cursorOutline) {
 
             cursorOutline.style.transform = "scale(1)";
             cursorOutline.style.borderColor = "#c084fc";
@@ -350,12 +350,12 @@ const header = document.getElementById("header");
 
 window.addEventListener("scroll", () => {
 
-    if(window.scrollY > 50){
+    if (window.scrollY > 50) {
 
         header.style.background = "rgba(9,6,17,.88)";
         header.style.boxShadow = "0 12px 30px rgba(0,0,0,.35)";
 
-    }else{
+    } else {
 
         header.style.background = "rgba(9,6,17,.55)";
         header.style.boxShadow = "none";
@@ -368,25 +368,25 @@ window.addEventListener("scroll", () => {
         BUTTON RIPPLE EFFECT
 =========================================*/
 
-document.querySelectorAll(".primary-btn").forEach(button=>{
+document.querySelectorAll(".primary-btn").forEach(button => {
 
-    button.addEventListener("click",function(e){
+    button.addEventListener("click", function (e) {
 
-        const circle=document.createElement("span");
+        const circle = document.createElement("span");
 
-        const diameter=Math.max(this.clientWidth,this.clientHeight);
+        const diameter = Math.max(this.clientWidth, this.clientHeight);
 
-        circle.style.width=diameter+"px";
-        circle.style.height=diameter+"px";
+        circle.style.width = diameter + "px";
+        circle.style.height = diameter + "px";
 
-        circle.style.left=e.offsetX-diameter/2+"px";
-        circle.style.top=e.offsetY-diameter/2+"px";
+        circle.style.left = e.offsetX - diameter / 2 + "px";
+        circle.style.top = e.offsetY - diameter / 2 + "px";
 
         circle.classList.add("ripple");
 
-        const ripple=this.getElementsByClassName("ripple")[0];
+        const ripple = this.getElementsByClassName("ripple")[0];
 
-        if(ripple){
+        if (ripple) {
 
             ripple.remove();
 
@@ -399,136 +399,92 @@ document.querySelectorAll(".primary-btn").forEach(button=>{
 });
 
 /*=========================================
-        CONTACT FORM
-=========================================*/
-
-const form=document.querySelector(".contact-form");
-
-if(form){
-
-form.addEventListener("submit",function(e){
-
-e.preventDefault();
-
-const inputs=form.querySelectorAll("input,textarea");
-
-let valid=true;
-
-inputs.forEach(input=>{
-
-if(input.value.trim()===""){
-
-valid=false;
-
-input.style.border="1px solid red";
-
-}else{
-
-input.style.border="1px solid rgba(255,255,255,.08)";
-
-}
-
-});
-
-if(valid){
-
-alert("Thank you! Your message has been received.");
-
-form.reset();
-
-}
-
-});
-
-}
-
-/*=========================================
         PARTICLES
 =========================================*/
 
-tsParticles.load("particles-js",{
+tsParticles.load("particles-js", {
 
-background:{color:"transparent"},
+    background: { color: "transparent" },
 
-fpsLimit:60,
+    fpsLimit: 60,
 
-particles:{
+    particles: {
 
-number:{
+        number: {
 
-value:55
+            value: 55
 
-},
+        },
 
-color:{
+        color: {
 
-value:["#8b5cf6","#3b82f6","#ffffff"]
+            value: ["#8b5cf6", "#3b82f6", "#ffffff"]
 
-},
+        },
 
-links:{
+        links: {
 
-enable:true,
+            enable: true,
 
-distance:150,
+            distance: 150,
 
-color:"#8b5cf6",
+            color: "#8b5cf6",
 
-opacity:.15
+            opacity: .15
 
-},
+        },
 
-move:{
+        move: {
 
-enable:true,
+            enable: true,
 
-speed:1.2
+            speed: 1.2
 
-},
+        },
 
-opacity:{
+        opacity: {
 
-value:.5
+            value: .5
 
-},
+        },
 
-size:{
+        size: {
 
-value:2
+            value: 2
 
-}
+        }
 
-},
+    },
 
-interactivity:{
+    interactivity: {
 
-events:{
+        events: {
 
-onHover:{
+            onHover: {
 
-enable:true,
+                enable: true,
 
-mode:"repulse"
+                mode: "repulse"
 
-},
+            },
 
-resize:true
+            resize: true
 
-},
+        },
 
-modes:{
+        modes: {
 
-repulse:{
+            repulse: {
 
-distance:120
+                distance: 120
 
-}
+            }
 
-}
+        }
 
-},
+    },
 
-detectRetina:true
+    detectRetina: true
 
 });
 
@@ -536,41 +492,41 @@ detectRetina:true
         FADE IN
 =========================================*/
 
-const revealItems=document.querySelectorAll(
+const revealItems = document.querySelectorAll(
 
-".project-card,.skill-category,.info-card,.stat-card,.timeline-item,.language-card,.resume-card,.contact-card"
-
-);
-
-const revealObserver=new IntersectionObserver(
-
-entries=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.classList.add("show");
-
-}
-
-});
-
-},
-
-{
-
-threshold:.15
-
-}
+    ".project-card,.skill-category,.info-card,.stat-card,.timeline-item,.language-card,.resume-card,.contact-card"
 
 );
 
-revealItems.forEach(item=>{
+const revealObserver = new IntersectionObserver(
 
-item.classList.add("hidden");
+    entries => {
 
-revealObserver.observe(item);
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("show");
+
+            }
+
+        });
+
+    },
+
+    {
+
+        threshold: .15
+
+    }
+
+);
+
+revealItems.forEach(item => {
+
+    item.classList.add("hidden");
+
+    revealObserver.observe(item);
 
 });
 
@@ -578,17 +534,17 @@ revealObserver.observe(item);
         PARALLAX HERO
 =========================================*/
 
-const hero=document.querySelector(".hero-image");
+const hero = document.querySelector(".hero-image");
 
-window.addEventListener("mousemove",(e)=>{
+window.addEventListener("mousemove", (e) => {
 
-if(!hero) return;
+    if (!hero) return;
 
-const x=(window.innerWidth/2-e.clientX)/40;
+    const x = (window.innerWidth / 2 - e.clientX) / 40;
 
-const y=(window.innerHeight/2-e.clientY)/40;
+    const y = (window.innerHeight / 2 - e.clientY) / 40;
 
-hero.style.transform=`translate(${x}px,${y}px)`;
+    hero.style.transform = `translate(${x}px,${y}px)`;
 
 });
 
@@ -596,11 +552,11 @@ hero.style.transform=`translate(${x}px,${y}px)`;
         YEAR
 =========================================*/
 
-const year=document.querySelector(".year");
+const year = document.querySelector(".year");
 
-if(year){
+if (year) {
 
-year.textContent=new Date().getFullYear();
+    year.textContent = new Date().getFullYear();
 
 }
 
@@ -609,4 +565,67 @@ year.textContent=new Date().getFullYear();
 =========================================*/
 
 console.log("%cWelcome to Mohammed Kaif's Portfolio 🚀",
-"color:#8b5cf6;font-size:18px;font-weight:bold;");
+    "color:#8b5cf6;font-size:18px;font-weight:bold;");
+
+/*=========================================
+        CONTACT FORM
+=========================================*/
+const contactForm = document.getElementById("contact-form");
+
+if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const inputs = contactForm.querySelectorAll("input, textarea");
+        let valid = true;
+
+        inputs.forEach((input) => {
+            if (input.value.trim() === "") {
+                valid = false;
+                input.style.border = "1px solid #ff4d4f";
+            } else {
+                input.style.border = "1px solid rgba(255,255,255,.08)";
+            }
+        });
+
+        if (!valid) {
+            return;
+        }
+
+        const button = contactForm.querySelector("button");
+        const originalText = button.innerHTML;
+
+        button.innerHTML = "Sending...";
+        button.disabled = true;
+
+        emailjs.send(
+            "service_ygg7jyf",
+            "template_kt2rohn",
+            {
+                from_name: contactForm.elements.from_name.value,
+                from_email: contactForm.elements.from_email.value,
+                subject: contactForm.elements.subject.value,
+                message: contactForm.elements.message.value,
+            }
+        )
+            .then((response) => {
+                console.log("SUCCESS!", response);
+                button.innerHTML = "✓ Message Sent";
+                contactForm.reset();
+
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.disabled = false;
+                }, 2500);
+            })
+            .catch((error) => {
+                console.error("EmailJS Error:", error);
+                button.innerHTML = "Failed to Send";
+
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.disabled = false;
+                }, 2500);
+            });
+    });
+}
