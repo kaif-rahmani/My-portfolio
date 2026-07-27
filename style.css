@@ -369,6 +369,10 @@ body::after{
 
 }
 
+.nav-tag{
+    display:none;
+}
+
 .nav-links{
 
     display:flex;
@@ -1849,6 +1853,56 @@ grid-template-columns:1fr;
 .info-grid{
 
 grid-template-columns:1fr;
+
+}
+
+.navbar{
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+}
+
+.nav-tag{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    flex:1;
+
+    margin:0 18px;
+
+    padding:8px 14px;
+
+    font-size:14px;
+    font-weight:500;
+
+    color:#fff;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:30px;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+    text-overflow:ellipsis;
+
+}
+
+.nav-buttons .btn{
+
+    display:none;
+
+}
+
+.hero-tag{
+
+    display:none;
 
 }
 
