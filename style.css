@@ -1670,33 +1670,53 @@ footer p{
 
 #backToTop{
 
-    position:fixed;
-    right:30px;
-    bottom:30px;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
 
-    width:55px;
-    height:55px;
+    width: 55px;
+    height: 55px;
 
-    border:none;
-    border-radius:50%;
+    border: none;
+    border-radius: 50%;
 
-    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    background: linear-gradient(135deg,var(--primary),var(--secondary));
 
-    color:white;
+    color: white;
 
-    cursor:pointer;
+    cursor: pointer;
 
-    display:none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    z-index:999;
+    opacity: 0;
+    visibility: hidden;
 
-    transition:.35s;
+    transition: .35s;
+
+    z-index: 999;
+
+    padding: 0;
+}
+
+#backToTop.show{
+
+    opacity: 1;
+    visibility: visible;
 
 }
 
 #backToTop:hover{
 
-    transform:translateY(-6px);
+    transform: translateY(-6px);
+
+}
+
+#backToTop i{
+
+    font-size: 20px;
+    line-height: 1;
 
 }
 
@@ -1796,7 +1816,7 @@ display:flex;
 
 }
 
-.resume-btn{
+.nav-buttons > a {
 
 display:none;
 

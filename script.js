@@ -158,11 +158,11 @@ window.addEventListener("scroll", () => {
 
     if (window.scrollY > 400) {
 
-        topBtn.style.display = "flex";
+        topBtn.classList.add("show");
 
     } else {
 
-        topBtn.style.display = "none";
+        topBtn.classList.remove("show");
 
     }
 
