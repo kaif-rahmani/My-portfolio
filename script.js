@@ -352,12 +352,12 @@ window.addEventListener("scroll", () => {
 
     if (window.scrollY > 50) {
 
-        header.style.background = "rgba(9,6,17,.88)";
+        header.style.background = "rgba(8, 8, 8, 0.88)";
         header.style.boxShadow = "0 12px 30px rgba(0,0,0,.35)";
 
     } else {
 
-        header.style.background = "rgba(9,6,17,.55)";
+        header.style.background = "rgba(8, 8, 8, 0.88)";
         header.style.boxShadow = "none";
 
     }
@@ -416,22 +416,39 @@ tsParticles.load("particles-js", {
 
         },
 
+        // color: {
+
+        //     value: ["#8b5cf6", "#3b82f6", "#ffffff"]
+
+        // },
+
         color: {
-
-            value: ["#8b5cf6", "#3b82f6", "#ffffff"]
-
+            value: [
+                "#ffffff",
+                "#d0d0d0",
+                "#a0a0a0",
+                "#707070"
+            ]
         },
 
+        // links: {
+
+        //     enable: true,
+
+        //     distance: 150,
+
+        //     color: "#8b5cf6",
+
+        //     opacity: .15
+
+        // },
+
         links: {
-
             enable: true,
-
+            color: "#a0a0a0",
+            opacity: 0.18,
             distance: 150,
-
-            color: "#8b5cf6",
-
-            opacity: .15
-
+            width: 1
         },
 
         move: {
